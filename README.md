@@ -24,6 +24,9 @@ level: '1'
 redirect_from: "/goals/69"
 ---
 
+Dataset :  jaidevd Aug 14, 2015 ("https://gist.github.com/jaidevd/23aef12e9bf56c618c41/revisions")
+---
+
 ## Description
 
 You've been tasked with building a web app for a local bookstore to help them manage their inventory.
@@ -31,11 +34,12 @@ You've been tasked with building a web app for a local bookstore to help them ma
 Create a simple content management system that allows users to view, add, delete, and update books. 
 Books entered in the system can be viewed in a list, as a single entry on its own page, or searched 
 for using basic searches (by title, author, or genre).
+---
 
 ## Specifications
 
 #### General
-- [ ] All views are rendered on the server using server-side templates written with [Pug][] or [EJS][]
+- [ ] All views are rendered on the server using server-side templates written with [Pug][] or [EJS][] NOTE: developer chose HANDLEBARS as an alternative template engine.
 - [ ] Web server can be started with the command `npm start`
 - [ ] Test suite can be run with the command `npm test`
 - [ ] All features are added as pull requests
