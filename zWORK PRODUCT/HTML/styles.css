@@ -1,0 +1,97 @@
+body {
+  background-color: white;
+  margin-left: 30px;
+}
+
+h1 {
+  font-family: Georgia, serif;
+  color: darkred;
+  padding-right: 700px;
+  padding-left: 45px;
+}
+
+h2 {
+  font-family: sans-serif;
+  padding-left: 10px;
+}
+
+h3 {
+  font-family: sans-serif;
+}
+
+h4 {
+  font-family: sans-serif;
+}
+
+form {
+  border: 1px solid black;
+  font-family: sans-serif;
+  color: black;
+  padding: 7px;
+}
+
+nav {
+  list-style: none;
+  display: inline-block;
+  color: black;
+  font-family: sans-serif;
+  background-color: lightgrey;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  float: right;
+}
+
+li {
+  list-style: none;
+  display: inline-block;
+  float: left;
+  padding-right: 20px;
+}
+
+#special-items {
+  display: inline-block;
+}
+
+#menu-items {
+  display: inline-block;
+}
+
+#order-history {
+  display: inline-block;
+}
+
+.special-items {
+  display: inline-block;
+  padding-right: 30px;
+  font-family: sans-serif;
+}
+
+.menu-items {
+  display: inline-block;
+  padding-right: 30px;
+}
+
+.order-history {
+  display: inline-block;
+  padding-right: 30px;
+}
+
+.profile {
+  float: right;
+  font-family: sans-serif;
+  padding-left: 20px;
+  display: inline-block;
+  color: white;
+  font-weight: bold;
+}
+
+.head {
+  display: inline-block;
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: black;
+}
