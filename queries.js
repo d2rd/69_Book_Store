@@ -29,8 +29,8 @@ function getAllBooks (req, res, next) {
 
 // GET Single Book
 function getSingleBook (req, res, next) {
-  var pupID = parseInt(req.params.id)
-  db.one('select * from books where id = $1', pupID)
+  var bookID = parseInt(req.params.id)
+  db.one('select * from books where bookid = $1', bookID)
     .then(function (data) {
       res.status(200)
         .json({
@@ -48,8 +48,7 @@ function getSingleBook (req, res, next) {
 function createBook (req, res, next) {
   req.body.height = parseInt(req.body.height)
   db.none('insert into books(title, genre, height, subgenre)' +
-    values(${title}, ${genre}, ${height}, ${subgenre})',
-    req.body)
+    'values($title, $genre, $height, $subgenre)')
     .then(function () {
       res.status(200)
         .json({
@@ -62,12 +61,11 @@ function createBook (req, res, next) {
     })
 }
 
-
 // Update (PUT) book info
-function updateBook(req, res, next) {
+function updateBook (req, res, next) {
   db.none('update books set title=$1, genre=$2, height=$3, subgenre=$4 where id=$5',
     [req.body.title, req.body.genre, parseInt(req.body.height),
-    req.body.subgenre, parseInt(req.params.id)])
+      req.body.subgenre, parseInt(req.params.id)])
     .then(function () {
       res.status(200)
         .json({
@@ -80,11 +78,10 @@ function updateBook(req, res, next) {
     })
 }
 
-
 // Delete a Single Book
-function removeBook(req, res, next) {
-  var pupID = parseInt(req.params.id)
-  db.result('delete from books where id = $1', pupID)
+function removeBook (req, res, next) {
+  var bookID = parseInt(req.params.id)
+  db.result('delete from books where id = $1', bookID)
     .then(function (result) {
       /* jshint ignore:start */
       res.status(200)
@@ -99,13 +96,27 @@ function removeBook(req, res, next) {
     })
 }
 
-// GET All Publishers 
-
+// GET All Publishers STRETCH
+function getAllPublishers (req, res, next) {
+  db.any('select publishers from books')
+    .then(function (data) {
+      res.status(200)
+        .json({
+          status: 'success',
+          data: data,
+          message: 'Retrieved ALL publishers'
+        })
+    })
+    .catch(function (err) {
+      return next(err)
+    })
+}
 
 module.exports = {
   getAllBooks: getAllBooks,
   getSingleBook: getSingleBook,
   createBook: createBook,
   updateBook: updateBook,
-  removeBook: removeBook
+  removeBook: removeBook,
+  getAllPublishers: getAllPublishers
 }
