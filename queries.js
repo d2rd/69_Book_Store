@@ -9,8 +9,9 @@ var pgp = require('pg-promise')(options)
 var connectionString = 'postgres://localhost:3000/bookstore'
 var db = pgp(connectionString)
 
-// add query functions
-  // GET All Books
+// add query functions from "Michael Herman: Designing RESTful API With Node and Postgres".  Substituted puppies from books.
+
+// GET All Books
 function getAllBooks (req, res, next) {
   db.any('select * from books')
       .then(function (data) {
