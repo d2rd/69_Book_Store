@@ -4,17 +4,28 @@ var router = express.Router();
 /* set queries.js as var 'db'. */
 var db = require('../queries');
 
-/* set routes */
-router.get('/api/bookstore', db.getAllPuppies);
-router.get('/api/bookstore/:id', db.getSingleBook);
-router.post('/api/bookstore', db.createBook);
-router.put('/api/bookstore/:id', db.updateBook);
-router.delete('/api/bookstore/:id', db.removeBook);
+
+// path to my app is "/Users/glenn-daviddaniel/lgProjects-local/gc69/69_Book_Store"
 
 
-/* GET home page. 
-router.get('/', function(req, res, next) {
+/* GET home page. */
+router.get('/', function (req, res, next) {
   res.render('index', { title: 'Express' });
 });
-*/
+
+
+/* set routes */
+router.get('/', function(req, res) {
+  console.log(msg)
+  res.send(200);
+
+}
+
+router.get('/bookstore', db.getAllBooks);
+router.get('/bookstore/:id', db.getSingleBook);
+router.post('/bookstore', db.createBook);
+router.put('/bookstore/:id', db.updateBook);
+router.delete('/bookstore/:id', db.removeBook);
+
+
 module.exports = router;
