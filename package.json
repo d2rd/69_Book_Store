@@ -14,10 +14,12 @@
     "debug": "~2.6.3",
     "express": "~4.15.2",
     "hbs": "^4.0.1",
+    "knex": "^0.13.0",
     "morgan": "~1.8.1",
     "nodemon": "^1.11.0",
     "pg-promise": "^5.9.0",
-    "serve-favicon": "~2.4.2"
+    "serve-favicon": "~2.4.2",
+    "yarn": "^0.24.5"
   },
   "author": "Glenn-David Daniel",
   "license": "MIT"

@@ -15,13 +15,19 @@ ATTRIBUTIONS
 
 TOOLS AND LIBRARIES
     Views
-        □ Handlebars server-side templating (npm install express-handlebars)
-        □ Bootstrap CSS library for UI 
+        □ Handlebars server-side templating engine ('npm install express-handlebars')
+        □ Bootstrap CSS library for UI
+
     Web Server
         □ npm
         □ Node (local)
         □ Nodemon server monitor
         □ Express web server framework (local)
+    
+    Libraries
+        □ Knex - Query builder for Node (be sure to initialize with 'knex init' to create knexfile.js configuration file)
+        □ pg - PostgreSQL library for node
+
     Database
         □ PostgreSQL database
         □ PgAdmin SQL modeling designer: 
