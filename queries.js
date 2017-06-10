@@ -6,7 +6,8 @@ var options = {
 }
 
 var pgp = require('pg-promise')(options)
-var connectionString = 'postgres://localhost:3000/bookstore'
+var connectionString = 'postgres://localhost:5432/Bookstore' // The port number '5432' is the db port.  Using '3000' directs the app to look at the same port as the webpage.
+
 var db = pgp(connectionString)
 
 // add query functions from "Michael Herman: Designing RESTful API With Node and Postgres".  Substituted puppies from books.
