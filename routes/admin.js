@@ -3,7 +3,7 @@ var router = express.Router()
 
 /* GET admin page. */
 router.get('/', function (req, res, next) {
-  res.render('index', {title: 'admin'})
+  res.render('admin', {title: 'Books Admin'})
 })
 
 module.exports = router

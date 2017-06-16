@@ -10,7 +10,7 @@ var connectionString = 'postgres://localhost:5432/Bookstore' // The port number 
 
 var db = pgp(connectionString)
 
-// add query functions from "Michael Herman: Designing RESTful API With Node and Postgres".  Substituted puppies from books.
+// add query functions from "Michael Herman: Designing RESTful API With Node and Postgres".  Substituted books for puppies.
 
 // GET All Books
 function getAllBooks (req, res, next) {
@@ -28,40 +28,24 @@ function getAllBooks (req, res, next) {
       })
 }
 
-// // GET Single Book JSON
-// function getSingleBook (req, res, next) {
-//   var bookID = parseInt(req.params.id)
-//   db.one('select data ->> $title FROM 
-//   books;')
-//     .then(function (data) {
-//       res.status(200)
-//         .json({
-//           status: 'success',
-//           data: data,
-//           message: 'Retrieved ONE book'
-//         })
-//     })
-//     .catch(function (err) {
-//       return next(err)
-//     })
-// }
-
-// GET Single Book ROWS
-function getSingleBook(req, res, next) {
+// GET Single Book
+function getSingleBook (req, res, next) {
   var bookID = parseInt(req.params.id)
-  db.one('select title, author from books where "bookID" = 3', bookID)
+  db.one('select * from books where id = $1')
     .then(function (data) {
       res.status(200)
         .json({
           status: 'success',
           data: data,
-          message: 'Retrieved ONE book'
+          message: 'Retrieved ALL books'
         })
     })
     .catch(function (err) {
       return next(err)
     })
 }
+
+
 
 // Create (POST) a Book
 function createBook (req, res, next) {

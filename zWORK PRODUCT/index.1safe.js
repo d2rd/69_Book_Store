@@ -8,13 +8,13 @@ var db = require('../queries')
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-  res.render('index', { title: 'Books, Bait and Beer' })
+  res.render('index', { title: 'Express' })
 })
 
 /* set routes */
 router.get('/', function (req, res) {
-  // console.log('Welcome to Books, Bait and Beer')
-  res.send(200) // Response should read "ok"
+  console.log('Welcome to Books, Bait and Beer')
+  res.send(200)
 },
 
 router.get('/bookstore', db.getAllBooks),
